@@ -1,0 +1,123 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('../assests/images/hero-bgg.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+}
+
+header {
+    position: relative;
+    padding: 20px 0;
+    background: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.7);
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between; /* Ensures left and right items are spaced out */
+    align-items: center;
+    padding: 0 20px;
+}
+
+header .nav-left {
+    flex: 1; /* Take up space on the left */
+}
+
+header .nav-left a,
+header .nav-right a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header .nav-left a:hover,
+header .nav-right a:hover {
+    color: #ffc107;
+}
+
+/* Removed header .nav-center since it's not used anymore */
+
+/* Page Backgrounds */
+.signup-page {
+    background: url('../assests/images/loginbg.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+.login-page {
+    background: url('../assests/images/hero-bgg.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+/* Form Styles */
+.login-container, .signup-container {
+    max-width: 400px;
+    margin: 50px auto;
+    background-color: rgba(255, 255, 255, 0.9); /* Light background for the form */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Deeper shadow for better elevation */
+    background-size: cover; /* Ensure background image covers the container */
+}
+
+.login-container {
+    background-image: url('../assests/images/loginbg.jpeg'); /* Specific login background */
+}
+
+.signup-container {
+    background-image: url('../assests/images/hero-bgg.jpeg'); /* Specific signup background */
+}
+
+.login-container h2, .signup-container h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #007BFF;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form input {
+    margin-bottom: 20px;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+}
+
+form button {
+    background: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 18px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease;
+}
+
+form button:hover {
+    background: #0056b3;
+}
+
+p a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+    transition: text-decoration 0.3s ease;
+}
+
+p a:hover {
+    text-decoration: underline;
+}

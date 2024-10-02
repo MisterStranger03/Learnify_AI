@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learnify AI</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <!-- Typewriter Effect CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/typewriter-effect@latest/dist/core.min.js"></script>
+</head>
+
+<body>
+    <div class="bg" style="height: 100vh;">
+        <!-- <video src="../static/assests/images/vid.mp4" autoplay muted loop class="home_video">   </video>      -->
+            <header>
+            <nav class="navbar">
+                <span class="hamburger-btn material-symbols-rounded">menu</span>
+                <a href="{{ url_for('home') }}" class="logo">
+                    <img src="../static/assests/images/logo.jpeg" alt="logo">
+                    <h2>Learnify AI</h2>
+                </a>
+                <ul class="links">
+                    <span class="close-btn material-symbols-rounded">close</span>
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('about') }}">About</a></li>
+                    <li><a href="#id_footer">Contact us</a></li>
+                </ul>
+                {% if current_user.is_authenticated %}
+                    <a href="{{ url_for('logout') }}" class="logout-btn">LOG OUT</a>
+                {% else %}
+                    <!-- Container for login and signup buttons -->
+                    <div class="auth-buttons">
+                        <a href="{{ url_for('signup') }}" class="signup-btn">SIGN UP</a>
+                        <a href="{{ url_for('login') }}" class="login-btn">LOG IN</a>
+                    </div>
+                {% endif %}
+            </nav>
+        </header>
+        <div class="video-background">
+            <video autoplay muted loop id="backgroundVideo">
+                <source src="../static/assests/images/vid1.mp4" type="video/mp4">
+            </video>
+        </div>
+    
+        <div class="blur-bg-overlay"></div>
+    
+        <div class="hero-section">
+            
+                <h2>Innovation is like looking for pieces in a jigsaw puzzle.<br> You have to find a lot of pieces that don't match to find <br> the one or two pieces that match.<br></h2>
+                <a href="{{ url_for('question_page') }}" style="text-decoration: none;" class="herobutton" target="_self">Question Generator</a>
+            
+        </div>
+
+
+    </div>
+    <footer id="id_footer" style="width: 100%; padding: 30px; display: flex; flex-direction: column; align-items: center; background: black;">
+        <h3 style="color: white; margin: 0;">Reach Me</h3>
+        <p style="color: gray; margin: 5px 0;">Mister Stranger</p>
+        <div style="display: flex; gap: 20px;">
+            <!-- Add content such as social media icons or links here -->
+            
+                <a href="https://github.com/MisterStranger03" target="_blank" style="color: white; font-size: 30px;"><i class="fa-2 fa-brands fa-github"></i></a>
+                <a href="https://www.instagram.com/" target="_blank" style="color: white; font-size: 30px;"><i class="fa-2 fa-brands fa-instagram"></i></a>
+                <a href="https://www.twitter.com/" target="_blank" style="color: white; font-size: 30px;"><i class="fa-2 fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/raman-sah-stranger/" target="_blank" style="color: white; font-size: 30px;" ><i class="fa-2 fa-brands fa-linkedin"></i></a>
+            
+        </div>
+    </footer>
+    
+    <script src="../static/js/script.js" defer></script>
+    
+</body>
+
+</html>

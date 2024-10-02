@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question Generator</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0">
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+
+<body class="ques"> 
+    <header>
+        <nav class="navbar">
+            <span class="hamburger-btn material-symbols-rounded">menu</span>
+            <a href="{{ url_for('home') }}" class="logo">
+                <img src="../static/assests/images/logo.jpeg" alt="logo">
+                <h2 style="color: #080000;">Learnify AI</h2>
+            </a>
+            <ul class="links1">
+                <li><a href="{{ url_for('home') }}" class="log-home">Home</a></li>
+            </ul>
+            <ul class="auth-links">
+                {% if current_user.is_authenticated %}
+                    <a href="{{ url_for('logout') }}" class="login-btn">LOG OUT</a>
+                {% else %}
+                    <button class="login-btn" id="show-login">LOG IN</button>
+                {% endif %}
+            </ul>
+            <span class="close-btn material-symbols-rounded">close</span>
+        </nav>
+    </header>
+
+    <h3 style="color: rgb(16, 4, 4); font-style: italic; text-align: center; font-size: 50px; padding-top: 15px;">
+        Question Generator</h3>
+
+    <main>
+        <div class="main-content">
+            <textarea id="contentInput" placeholder="Enter content here..."></textarea>
+            <button id="generateQuestionsBtn">Generate Questions</button>
+            <button id="generateFlashcardsBtn">Generate Flashcards</button>
+            
+            <div id="questionsContainer"></div>
+            <div id="flashcardsContainer"></div> <!-- New container to display flashcards -->
+
+            <div id="results"></div>
+            <div id="actionButtons" style="display: none;">
+                <button id="generateMoreQuestionsBtn">Generate More Questions</button>
+                <button id="checkAnswersBtn">Check Answers</button>
+                <button id="closeBtn">Close</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="../static/js/script.js"></script>
+    <script src="../static/js/script1.js"></script>
+</body>
+
+</html>

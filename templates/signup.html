@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - QuestionGen</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0">
+</head>
+<body class="signup-page">
+    <header>
+        <nav class="navbar">
+            
+            <div class="nav-left">
+                <a href="{{ url_for('home') }}">Home</a>
+            </div>
+            
+            <div class="nav-right">
+                <a href="{{ url_for('login') }}">Login</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="signup-container">
+            <h2>Sign Up</h2>
+            <form method="POST" action="{{ url_for('signup') }}">
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="password" placeholder="Create Password" required>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+    </main>
+    <script src="../static/js/script.js" defer></script>
+</body>
+</html>
